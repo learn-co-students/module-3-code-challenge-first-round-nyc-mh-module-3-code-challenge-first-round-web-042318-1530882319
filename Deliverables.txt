@@ -1,0 +1,23 @@
+1) Display all beer names
+  <!-- -GET beers with Fetch -->
+  <!-- -Iterate over beers -->
+  <!-- -Create element for each beer, add class to element
+  -Append element to the page -->
+
+2) Display Beer Details
+  <!-- -Add event listener for click on beer from list -->
+  <!-- -Obtain information of beer from list -->
+  <!-- -Display beer name, beer image, and beer tagline as static HTML
+  -Display beer description in a form -->
+  <!-- -Add event listener to details for "save" action -->
+    -PATCH the updated description to the server
+
+{id: 14,
+  name: "Mixtape 8",
+  tagline: "An Epic Fusion Of Old Belgian, American New Wave, And Scotch Whisky.",
+  first_brewed: "01/2012",
+  description : "This recipe is for the Belgian Tripel base. A blen…, fruity esters, and punchy citrus hop character.", 
+  image_url:
+  food_pairing: [arr]
+
+}
