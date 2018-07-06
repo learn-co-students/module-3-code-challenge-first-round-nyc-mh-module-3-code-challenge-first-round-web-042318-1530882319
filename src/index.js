@@ -1,5 +1,6 @@
 const beerURL = "http://localhost:3000/beers"
 document.addEventListener("DOMContentLoaded", function() {
+  let beers;
 
   const beerList = document.getElementById("list-group");
   const beerDetailDiv = document.getElementById("beer-detail");
@@ -31,9 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function handleDisplayingBeer(beerJson) {
-
-    beerJson.forEach( function(beerObj) {
-      createAndAppendBeerElement(beerObj);
+    beers = beerJson;
+    debugger;
+    beers.forEach( function(beerObj) {
+      beerObj.addToList();
     })
   }
 
