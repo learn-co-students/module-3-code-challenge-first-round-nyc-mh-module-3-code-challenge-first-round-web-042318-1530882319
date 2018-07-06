@@ -31,7 +31,6 @@ class Beer {
     beerDetailDiv.innerHTML += `<textarea>${this.description}</textarea><button id="edit-beer" class="btn btn-info" data-beer-local-id="${this.id}" data-beer-db-id="${this.dbId}">Save</button>`
     beerDetailDiv.innerHTML += `<h4>First Brewed:</h4> <p>${this.first_brewed}</p>`
     beerDetailDiv.innerHTML += `<h4>Tips from the Brewers: </h5>${this.brewers_tips}`
-    debugger;
     this.createAndAppendFoodPairings();
   }
 

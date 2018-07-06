@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function findBeerFromLocalId(event) {
-    debugger;
    return beers.find( function(beer) { return beer.id === parseInt(event.target.dataset.beerLocalId)} );
   }
 
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
     beers.forEach( function(beerObj) {
       beerObj.addToList();
     })
-    debugger;
   }
 
   function handleDisplayingBeerDetails(event) {
