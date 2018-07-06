@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
-// POST request to api to edit a beer's description
+// PATCH request to api to edit a beer's description
   function updateBeerInfo(id, newDescription) {
     const beerObj = {
       method: "PATCH",
