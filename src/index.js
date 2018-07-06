@@ -18,27 +18,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
     return clickedBeer;
   };
 
-  function buildBeerHtml(beerData){
+  function buildBeerHtml(beerData, action, amendedDescriptionText){
+
+    function displayNew() {
+      if (action === "edit") {
+        return `<textarea id="description-textfield">${amendedDescriptionText}</textarea>
+        <h2>Your description was succesfully submitted.</h2>`
+    } else {
+        return `<textarea id="description-textfield">${beerData.description}</textarea>`
+    }
+  }
     return `<h1>${beerData.name}</h1>
             <img src="${beerData.image_url}">
             <h3>${beerData.tagline}</h3>
-            <textarea id="description-textfield">${beerData.description}</textarea>
+            ${displayNew()}
             <button id="edit-beer" data-beer-id="${beerData.id}" class="btn btn-info">
                 Save
             </button>`
   }
 
-  function displayDetailBeer(beerId){
+  function displayDetailBeer(beerId, action, amendedDescriptionText){
     const clickedFoudBeer = findBeerById(beerId);
-    showContainer.innerHTML = buildBeerHtml(clickedFoudBeer);
+    showContainer.innerHTML = buildBeerHtml(clickedFoudBeer, action, amendedDescriptionText);
   }
 
   function saveAmendedDescription(beerId,amendedDescriptionText){
     const updateURL = `${url}/${beerId}`;
     const data = {description: amendedDescriptionText}
     const configObj = {method: "PATCH", headers:{'Content-Type': 'application/json', 'Accept': 'application/json'} , body: JSON.stringify(data)}
-    console.log(updateURL);
-    console.log(configObj);
     fetch(updateURL, configObj).then(r=>r.json()).then(init);
   }
 
@@ -50,7 +57,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     else if (event.target.id === "edit-beer"){
       event.preventDefault();
       const amendedDescriptionText = document.getElementById("description-textfield").value;
-      saveAmendedDescription(event.target.dataset.beerId,amendedDescriptionText);
+      displayDetailBeer(event.target.dataset.beerId, "edit", amendedDescriptionText);
+      saveAmendedDescription(event.target.dataset.beerId, amendedDescriptionText);
     }
   })
 
@@ -87,20 +95,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
   //trigger
   init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //final closing DOMContentLoaded
 });
