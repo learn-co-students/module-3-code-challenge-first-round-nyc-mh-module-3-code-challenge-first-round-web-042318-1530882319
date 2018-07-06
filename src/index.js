@@ -34,12 +34,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
             ${displayNew()}
             <button id="edit-beer" data-beer-id="${beerData.id}" class="btn btn-info">
                 Save
+            </button>
+            <button id="show-more-beer" data-beer-id="${beerData.id}" class="btn btn-info">
+                More
             </button>`
+  }
+
+  function buildMoreBeerHtml(beerData){
+
+    return `<h3>First brewed</h3>
+            <p>${beerData.first_brewed}</p>
+            <h3>Brewer tips</h3>
+            <p>${beerData.brewers_tips}</p>
+            <h3>Food Pairing</h3>
+            <ul>${beerData.food_pairing.map(function(food){
+              return `<li>${food}</li>`
+            }).join("")}</ul>
+            <h3>Contributor</h3>
+            <p>${beerData.contributed_by}</p>
+            `
   }
 
   function displayDetailBeer(beerId, action, amendedDescriptionText){
     const clickedFoudBeer = findBeerById(beerId);
     showContainer.innerHTML = buildBeerHtml(clickedFoudBeer, action, amendedDescriptionText);
+  }
+
+  function displayMoreBeer(beerId){
+    const clickedFoudBeer = findBeerById(beerId);
+    showContainer.innerHTML += buildMoreBeerHtml(clickedFoudBeer);
   }
 
   function saveAmendedDescription(beerId,amendedDescriptionText){
@@ -55,10 +78,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
       displayDetailBeer(event.target.dataset.id);
     }
     else if (event.target.id === "edit-beer"){
-      event.preventDefault();
+      event.preventDefault(); //i dont think I need this its not a form
       const amendedDescriptionText = document.getElementById("description-textfield").value;
       displayDetailBeer(event.target.dataset.beerId, "edit", amendedDescriptionText);
       saveAmendedDescription(event.target.dataset.beerId, amendedDescriptionText);
+    }
+    else if (event.target.id === "show-more-beer"){
+      event.preventDefault(); //i dont think I need this its not a form
+      displayMoreBeer(event.target.dataset.beerId);
     }
   })
 
@@ -78,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function init(){
 
     function keyValuesBeer(beer){
-      const gimmeThatHash = {id: beer.id, name: beer.name, tagline: beer.tagline , description: beer.description, image_url: beer.image_url};
+      const gimmeThatHash = {id: beer.id, name: beer.name, tagline: beer.tagline , description: beer.description, image_url: beer.image_url, first_brewed: beer.first_brewed, food_pairing: beer.food_pairing, brewers_tips: beer.brewers_tips, contributed_by: beer.contributed_by};
       return gimmeThatHash;
     }
 
