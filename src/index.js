@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     function saveBeers(allBeers) {
+      beers = [];
       allBeers.forEach(function (beer) {
         beers.push(keyValuesBeer(beer));
       })
