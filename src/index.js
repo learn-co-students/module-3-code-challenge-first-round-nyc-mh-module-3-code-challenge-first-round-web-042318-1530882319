@@ -59,8 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const configObj = {
         method: 'PATCH',
         headers: {
-          "Accept": "application/json",
-          "Content-Type": "application/json"
+          "Accept": "application/json", "Content-Type": "application/json"
         },
         body: JSON.stringify(payload)
       }

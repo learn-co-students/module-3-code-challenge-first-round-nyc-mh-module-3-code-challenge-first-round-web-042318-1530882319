@@ -10,14 +10,4 @@
   <!-- -Display beer name, beer image, and beer tagline as static HTML
   -Display beer description in a form -->
   <!-- -Add event listener to details for "save" action -->
-    -PATCH the updated description to the server
-
-{id: 14,
-  name: "Mixtape 8",
-  tagline: "An Epic Fusion Of Old Belgian, American New Wave, And Scotch Whisky.",
-  first_brewed: "01/2012",
-  description : "This recipe is for the Belgian Tripel base. A blen…, fruity esters, and punchy citrus hop character.", 
-  image_url:
-  food_pairing: [arr]
-
-}
+    <!-- -PATCH the updated description to the server -->
