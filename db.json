@@ -5,7 +5,7 @@
       "name": "Buzz",
       "tagline": "A Real Bitter Experience.",
       "first_brewed": "09/2007",
-      "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+      "description": "This will persist.",
       "image_url": "https://images.punkapi.com/v2/keg.png",
       "food_pairing": [
         "Spicy chicken tikka masala",
@@ -35,7 +35,7 @@
       "name": "Pilsen Lager",
       "tagline": "Unleash the Yeast Series.",
       "first_brewed": "09/2013",
-      "description": "Our Unleash the Yeast series was an epic experiment into the differences in aroma and flavour provided by switching up your yeast. We brewed up a wort with a light caramel note and some toasty biscuit flavour, and hopped it with Amarillo and Centennial for a citrusy bitterness. Everything else is down to the yeast. Pilsner yeast ferments with no fruity esters or spicy phenols, although it can add a hint of butterscotch.",
+      "description": "Start of history.",
       "image_url": "https://images.punkapi.com/v2/4.png",
       "food_pairing": [
         "Spicy crab cakes",
@@ -65,7 +65,7 @@
       "name": "Electric India",
       "tagline": "Vibrant Hoppy Saison.",
       "first_brewed": "05/2013",
-      "description": "wow so good!",
+      "description": "Start of history.",
       "image_url": "https://images.punkapi.com/v2/6.png",
       "food_pairing": [
         "Mussels with a garlic and herb sauce",
@@ -110,7 +110,7 @@
       "name": "Bramling X",
       "tagline": "Single Hop IPA Series - 2011.",
       "first_brewed": "01/2011",
-      "description": "This is a bramling x beer. I wrote this description to see if it saves to the backend.",
+      "description": "This will persist.",
       "image_url": "https://images.punkapi.com/v2/10.png",
       "food_pairing": [
         "Warm blackberry pie",
@@ -170,7 +170,7 @@
       "name": "Alpha Dog",
       "tagline": "Existential Red Ale.",
       "first_brewed": "02/2010",
-      "description": "A fusion of caramel malt flavours and punchy New Zealand hops. A session beer you can get your teeth into.",
+      "description": "This will persist.",
       "image_url": "https://images.punkapi.com/v2/14.png",
       "food_pairing": [
         "Pastrami",
@@ -216,7 +216,7 @@
       "name": "AB:06",
       "tagline": "Imperial Black IPA.",
       "first_brewed": "04/2011",
-      "description": "Our sixth Abstrakt, this imperial black IPA combined dark malts with a monumental triple dry-hop, using an all-star team of some of our favourite American hops. Roasty and resinous.",
+      "description": "This will persist.",
       "image_url": "https://images.punkapi.com/v2/17.png",
       "food_pairing": [
         "Coffee dusted venison loin",
@@ -321,7 +321,7 @@
       "name": "The End Of History",
       "tagline": "The World's Strongest Beer.",
       "first_brewed": "06/2011",
-      "description": "The End of History: The name derives from the famous work of philosopher Francis Fukuyama, this is to beer what democracy is to history. Complexity defined. Floral, grapefruit, caramel and cloves are intensified by boozy heat.",
+      "description": "Start of history.",
       "image_url": "https://images.punkapi.com/v2/24.png",
       "food_pairing": [
         "Roasted wood pigeon with black pudding",
