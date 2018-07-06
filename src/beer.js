@@ -21,16 +21,17 @@ class Beer {
     let beerElement = document.createElement("li");
     beerElement.className = "list-group-item";
     beerElement.innerText = this.name;
-    beerElement.dataset.beerId = this.id;
+    beerElement.dataset.beerLocalId = this.id;
     beerList.append(beerElement);
   }
 
   renderDetails() {
     beerDetailDiv.innerHTML = "";
     beerDetailDiv.innerHTML += `<h1>${this.name}</h1> <img src="${this.imageUrl}"> <h3>${this.tagline}`
-    beerDetailDiv.innerHTML += `<textarea>${this.description}</textarea><button id="edit-beer" class="btn btn-info" data-beer-id="${this.id}">Save</button>`
+    beerDetailDiv.innerHTML += `<textarea>${this.description}</textarea><button id="edit-beer" class="btn btn-info" data-beer-local-id="${this.id}" data-beer-db-id="${this.dbId}">Save</button>`
     beerDetailDiv.innerHTML += `<h4>First Brewed:</h4> <p>${this.first_brewed}</p>`
     beerDetailDiv.innerHTML += `<h4>Tips from the Brewers: </h5>${this.brewers_tips}`
+    debugger;
     this.createAndAppendFoodPairings();
   }
 
