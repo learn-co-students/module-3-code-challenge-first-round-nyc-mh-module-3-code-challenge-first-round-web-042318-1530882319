@@ -1,0 +1,13 @@
+1) Display all beer names
+  <!-- -GET beers with Fetch -->
+  <!-- -Iterate over beers -->
+  <!-- -Create element for each beer, add class to element
+  -Append element to the page -->
+
+2) Display Beer Details
+  <!-- -Add event listener for click on beer from list -->
+  <!-- -Obtain information of beer from list -->
+  <!-- -Display beer name, beer image, and beer tagline as static HTML
+  -Display beer description in a form -->
+  <!-- -Add event listener to details for "save" action -->
+    <!-- -PATCH the updated description to the server -->
