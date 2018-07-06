@@ -55,15 +55,14 @@ document.addEventListener("DOMContentLoaded", function(){
             beerTagline.innerText = individualBeerTagline;
             beerDescription.innerText = individualBeerDescription;
 
-              editButton.addEventListener("click", function(e){
-                // e.preventDefault();
-                let beerTextField = document.getElementById("detail-beer-description") //difficulty accessing the first time it was assigned
-                let newDescription = beerTextField.value;
-                updateBackend(individualBeerId, newDescription)
-              })
+            editButton.addEventListener("click", function(e){
+              // e.preventDefault();
+              let beerTextField = document.getElementById("detail-beer-description") //difficulty accessing the first time it was assigned
+              let newDescription = beerTextField.value;
+              updateBackend(individualBeerId, newDescription)
+            })
 
               function updateBackend(beerId, newDescription){
-
                 let url_with_id = `http://localhost:3000/beers/` + beerId;
                 let submissionBody =  {"description": newDescription}
 
