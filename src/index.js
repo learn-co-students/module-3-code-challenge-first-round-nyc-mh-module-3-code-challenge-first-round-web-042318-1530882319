@@ -4,6 +4,8 @@ const beerDetailDiv = document.getElementById('beer-detail')
 
 document.addEventListener("DOMContentLoaded", function(){
 
+  //hard coded the first detail display so that the page doesn't load with empty content. There is definitely a better way to do this. This also means the first description won't be updated from the server because I haven't fetched yet.
+
   fetch("http://localhost:3000/beers")
   .then(response=>response.json())
   .then(json=>manageData(json));
