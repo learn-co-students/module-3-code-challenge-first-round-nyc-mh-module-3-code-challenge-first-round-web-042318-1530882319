@@ -28,6 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   showBeers()
 
+  function getBeer(id) {
+      fetch(`${beersURL}/${id}`).then(response => response.json())
+    .then(json => {
+      const beerLi = document.querySelector(`[data-id="${id}"]`)
+      beerLi.dataset.description = textArea.value
+    })
+  }
+
+
   //gets specific beer data from sidebar and when clicked, beer shows up in main part of page
   // allows you to edit description of beer and save on click of side button
   sidebar.addEventListener('click', event => {
@@ -62,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
           description: textArea.value
         }),
       }).then(response => response.json())
+      .then(json => getBeer(beer.dataset.id))
     }
-
   }
 });
