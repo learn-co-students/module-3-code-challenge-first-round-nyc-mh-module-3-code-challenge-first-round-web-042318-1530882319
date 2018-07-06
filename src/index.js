@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", function(){
   .then(response=>response.json())
   .then(json=>manageData(json));
 
-
-
-
   function manageData(data){
     displaySidebar(data);
   }
@@ -25,10 +22,8 @@ document.addEventListener("DOMContentLoaded", function(){
         li.innerText = beerName
         sidebarUl.append(li);
 
-        // debugger;
-
         //add click event to display main detail
-        li.addEventListener("click", function(e){
+      li.addEventListener("click", function(e){
           e.preventDefault()//probably not neccessary. Including as precaution.
           getIndividualBeerData(beerId)
         })
@@ -43,14 +38,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
           function showBeerDetail(individualBeerData){
 
-
             let beerHeadline = document.getElementById("detail-beer-name")
             let beerImage = document.getElementById("detail-beer-image")
             let beerTagline = document.getElementById("detail-beer-tagline")
             let beerDescription = document.getElementById("detail-beer-description")
             let editButton = document.getElementById("edit-beer")
-
-            debugger;
 
             let individualBeerId = individualBeerData.id;
             let individualBeerName = individualBeerData.name;
@@ -86,18 +78,7 @@ document.addEventListener("DOMContentLoaded", function(){
               }
 
             }//close showBeerDetail()
-
-
-
-
-
       })
   }
-
-
-
-
-
-
 
 })
