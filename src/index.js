@@ -1,60 +1,55 @@
-const sidebarUl = document.getElementById("list-group")
-const beerDetailDiv = document.getElementById('beer-detail')
+let beerStore = []
 
 fetch("http://localhost:3000/beers")
-  .then(response=>response.json())
-  .then(json=>displaySidebar(json));
+.then(response=>response.json())
+.then(json=>saveBeersLocally(json));
 
-function displaySidebar(data){
 
-    data.forEach(function(individualBeer){
-      let beerName = individualBeer.name;
-      let beerId = individualBeer.id;
-      let beerDescription = individualBeer.description;
-      let li = document.createElement("li");
-      li.className = "list-group-item";
-      li.id = beerId;
-      li.innerText = beerName
-      sidebarUl.append(li);
-
-      //not .getElementById("list-group") because edit button isn't a child of sidebar
-      document.addEventListener("click", function(e){
-        if (e.target && e.target.className === "list-group-item"){
-          getIndividualBeerData(e.target.id); //why is beerId undefined?
-        } else if (e.target.id === "update-beer") {
-          let beerId = e.target.parentElement.children[3].id
-          let updatedBeerDescription = e.target.parentElement.getElementsByTagName('textarea')[0].value;
-          updateBackend(beerId, updatedBeerDescription)
-        }
-      })
+function saveBeersLocally(json){
+  json.forEach(function(individualBeer){
+    let currentBeer = new Beer (individualBeer);
+    beerStore.push(currentBeer)
+    currentBeer.displaySidebar();
   })
 }
 
-function getIndividualBeerData(beerId){
-  let url_with_id = `http://localhost:3000/beers/` + beerId;
-  fetch(url_with_id)
+sidebarUl.addEventListener("click", function(e){
+  if (e.target.dataset.objectId){
+    let currentBeer = findBeer(e);
+    currentBeer.showBeerDetail();
+  }
+})
+
+beerDetailDiv.addEventListener("click", function(e){
+
+  if (e.target.id === "update-beer"){
+    let currentBeerObj = findBeerAgain(e.target.parentElement.children[3].id);
+    let updatedBeerDescription = e.target.parentElement.getElementsByTagName("textarea")[0].value;
+    currentBeerObj.updateBackend(updatedBeerDescription);
+  }
+
+})
+
+function findBeer(e){
+  return beerStore.find(function(beer){
+    if (beer.id == e.target.dataset.objectId){
+      // debugger;
+      return e.target.dataset.objectId
+    }
+  })
+}
+
+function findBeerAgain(e){
+  return beerStore.find(function(beer){
+    if (beer.id == e){
+      // debugger;
+      return e
+    }
+  })
+}
+
+function refreshFetch(){
+  fetch("http://localhost:3000/beers")
   .then(response=>response.json())
-  .then(json=>showBeerDetail(json));
-}
-
-function showBeerDetail(individualBeerData){
-  beerDetailDiv.innerHTML = `
-    <h1>${individualBeerData.name}</h1>
-    <img src="${individualBeerData.image_url}">
-    <h3>${individualBeerData.tagline}</h3>
-    <textarea id="${individualBeerData.id}">${individualBeerData.description}</textarea>
-    <button id="update-beer" class="btn btn-info">Save</button>`
-}
-
-function updateBackend(beerId, newDescription){
-  let url_with_id = `http://localhost:3000/beers/` + beerId;
-  let submissionBody =  {"description": newDescription}
-  fetch(url_with_id, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify(submissionBody)
-      })
+  .then(json=>saveBeersLocally(json));
 }
