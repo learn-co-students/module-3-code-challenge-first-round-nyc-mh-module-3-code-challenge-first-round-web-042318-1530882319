@@ -31,6 +31,7 @@ beerDetailDiv.addEventListener("click", function(e){
 
 })
 
+//these two functions are basically the same, except for they take in slightly different parameters. Can definitely make DRY.
 function findBeer(e){
   return beerStore.find(function(beer){
     if (beer.id == e.target.dataset.objectId){
