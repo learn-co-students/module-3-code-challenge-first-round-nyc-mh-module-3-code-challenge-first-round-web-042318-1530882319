@@ -5,7 +5,7 @@
       "name": "Buzz",
       "tagline": "A Real Bitter Experience.",
       "first_brewed": "09/2007",
-      "description": "This will persist.",
+      "description": "This is the buzz beer.",
       "image_url": "https://images.punkapi.com/v2/keg.png",
       "food_pairing": [
         "Spicy chicken tikka masala",
@@ -65,7 +65,7 @@
       "name": "Electric India",
       "tagline": "Vibrant Hoppy Saison.",
       "first_brewed": "05/2013",
-      "description": "Start of history.",
+      "description": "TESTING START OF HISTORY. PLZ WORK",
       "image_url": "https://images.punkapi.com/v2/6.png",
       "food_pairing": [
         "Mussels with a garlic and herb sauce",
@@ -140,7 +140,7 @@
       "name": "Arcade Nation",
       "tagline": "Seasonal Black IPA.",
       "first_brewed": "12/2015",
-      "description": "IS THIS WORKING ON ARCADE NATION BEER????",
+      "description": "NOT START OF HISTORY.",
       "image_url": "https://images.punkapi.com/v2/12.png",
       "food_pairing": [
         "King prawn kebabs",
