@@ -26,6 +26,7 @@ beerDetailDiv.addEventListener("click", function(e){
     let currentBeerObj = findBeerAgain(e.target.parentElement.children[3].id);
     let updatedBeerDescription = e.target.parentElement.getElementsByTagName("textarea")[0].value;
     currentBeerObj.updateBackend(updatedBeerDescription);
+    //Saving to backend works immediately, but currently doesn't alter content until page reload.
   }
 
 })
@@ -46,10 +47,4 @@ function findBeerAgain(e){
       return e
     }
   })
-}
-
-function refreshFetch(){
-  fetch("http://localhost:3000/beers")
-  .then(response=>response.json())
-  .then(json=>saveBeersLocally(json));
 }
